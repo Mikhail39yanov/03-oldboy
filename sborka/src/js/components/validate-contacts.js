@@ -5,7 +5,7 @@ import { enableScroll } from '../components/helper-functions/enable-scroll.js'
 const popup = document.querySelector('.popup-overlay')
 
 popup.addEventListener('click', () => {
-  disableScroll()
+  enableScroll()
   popup.classList.remove('_active')
 })
 
