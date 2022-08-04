@@ -4,7 +4,10 @@ import { enableScroll } from '../components/helper-functions/enable-scroll.js'
 
 const popup = document.querySelector('.popup-overlay')
 
-popup.addEventListener('click', () => popup.classList.remove('_active'))
+popup.addEventListener('click', () => {
+  disableScroll()
+  popup.classList.remove('_active')
+})
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
