@@ -6,12 +6,8 @@
   list-style: none;
 }
 
-@mixin setFontStyleArimo {
-  font-family: 'Arimo', sans-serif;
-}
-
-@mixin setFontStyleNotoSans {
-  font-family: 'NotoSans', sans-serif;
+@mixin setFontStyleRex {
+  font-family: 'RexBold', sans-serif;
 }
 
 @mixin setFontStyleOpenSans {

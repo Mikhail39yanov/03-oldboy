@@ -5,10 +5,10 @@ html {
   box-sizing: border-box;
 }
 
-html,
-body {
-  overscroll-behavior: none;
-}
+// html,
+// body {
+//   overscroll-behavior: none;
+// }
 
 *,
 *::before,
@@ -39,6 +39,13 @@ a {
   color: inherit;
 }
 
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .btn-reset {
   padding: 0;
   border: none;
@@ -47,14 +54,18 @@ a {
 }
 
 .btn-primary {
+  @include setFontStyleOpenSans();
   display: inline-grid;
   grid-auto-flow: column;
-  padding: 1px;
   gap: 5px;
+  padding: 10px 26px;
   align-items: center;
-  @include setFontStyleNotoSans();
-  font-size: 14px;
-  font-weight: $fontWeightRegular;
+  font-size: 12px;
+  font-weight: $fontWeightBold;
+  background-color: $colorGold;
+  color: $colorWhite;
+  border-radius: 25px;
+  text-transform: uppercase;
   transition: background-color .3s linear, color .3s linear;
 
   &:hover {
@@ -88,7 +99,6 @@ a {
   display: inline-block;
   padding: 14px 50px;
   background-color: $colorBlackText;
-  @include setFontStyleNotoSans();
   font-size: 14px;
   font-weight: $fontWeightRegular;
   color: $colorWhiteText;
@@ -112,68 +122,30 @@ a {
   }
 }
 
+.title {
+  @include setFontStyleRex();
+  font-size: 64px;
+  color: $colorWhite;
+  line-height: 0.9;
+}
+
 .subtitle {
-  @include setFontStyleArimo();
   font-size: 36px;
   font-weight: $fontWeightRegular;
   color: $colorBlack;
 }
 
 .text {
-  @include setFontStyleNotoSans();
   font-size: 15px;
-  font-weight: $fontWeightLight;
+  // font-weight: $fontWeightLight;
   line-height: 180%;
   color: $colorBlack;
 }
 
 .text-mini {
-  @include setFontStyleNotoSans();
   color: $colorWhiteTextMini;
   font-size: 12px;
   font-weight: $fontWeightRegular;
-}
-
-.wrapper {
-  min-height: 100%;
-  opacity: 0;
-  transition: opacity .8s ease;
-}
-
-.wrapper._loaded {
-  opacity: 1;
-}
-
-.wrapper._loaded .header {
-  transform: translate(0px, 0px);
-  transition: transform .8s linear;
-}
-
-.wrapper._loaded .page__pagination {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0px, -50%);
-  transition: transform .6s linear;
-}
-
-.wrapper._free .page__pagination {
-  opacity: 0;
-  transform: translate(50px, -50%);
-  transition: transform .3s linear, opacity .3s linear;
-}
-
-.page-loader {
-  position: absolute;
-  z-index: 1000;
-  background-color: #FFF;
-}
-
-.page-loader._bot {
-  bottom: 0;
-}
-
-.page-loader._top {
-  top: 0;
 }
 
 .arrow-right {
@@ -202,10 +174,6 @@ a {
   }
 }
 
-.play {
-  width: 72px;
-  height: 72px;
-}
 
 .disable-scroll {
   position: fixed;
@@ -217,9 +185,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    opacity: 1;
-  }
 
   .text-mini {
     color: $colorGrey;

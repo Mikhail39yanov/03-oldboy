@@ -8,5 +8,5 @@ export function openMenu() {
   disableScroll()
   buttonMenu.classList.add('_active')
   menu.classList.add('_active')
-  phone.classList.add('_active')
+  // phone.classList.add('_active')
 }

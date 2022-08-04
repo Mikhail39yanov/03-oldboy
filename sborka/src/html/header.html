@@ -1,29 +1,108 @@
 <header class="header">
-  <!-- <a class="header__logo" data-header-link data-header-logo>
-    ГРАН-МАР
-  </a>
-  <nav class="header__menu menu fix-block" data-menu>
-    <ul class="menu__list">
-      <li>
-        <a class="menu__link" href="#" data-header-link data-link="gallerey">Галерея камня</a>
-      </li>
-      <li>
-        <a class="menu__link" href="#" data-header-link data-link="gallerey-2">Изделия из камня</a>
-      </li>
-      <li>
-        <a class="menu__link" href="#" data-header-link data-link="result">Проекты</a>
-      </li>
-      <li>
-        <a class="menu__link" href="#" data-header-link data-link="production">О производстве</a>
-      </li>
-      <li>
-        <a class="menu__link" href="#" data-header-link data-link="contacts">Контакты</a>
-      </li>
-    </ul>
-    <a class="header__link header__link--mobile" href="tel:+74012982110" data-menu-phone>+7 (4012) 98 21 10</a>
-  </nav>
-  <a class="header__link" href="tel:+74012982110" data-header-link data-menu-phone>+7 (4012) 98 21 10</a>
-  <button class="header__burger burger btn btn-reset" data-header-link data-open-menu aria-label="Открыть меню">
-    <span></span>
-  </button> -->
+  <div class="header__top">
+    <a class="header__logo">
+      <img src="../img/header/logo.svg" alt="Oldboy">
+    </a>
+    <nav class="header__menu menu fix-block" data-menu>
+      <ul class="menu__list">
+        <li>
+          <a class="menu__link" href="#">Главная</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Услуга</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Блог</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Франшиза</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Инвестиции</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Вакансии</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__contact-number contact-number">
+      <a class="contact-number__phone" href="tel:+78002345973">8 800 2345 973</a>
+      <p class="contact-number__text">заказть&nbsp;обратный&nbsp;звонок</p>
+    </div>
+    <div class="header__sity-select city-select">
+      <a class="city-select__link" href="#">
+        <p class="city-select__select">
+          Выбери свой барбершоп:
+          <span class="city-select__triangle">▼</span>
+        </p>
+        <p class="city-select__city">Москва</p>
+      </a>
+    </div>
+    <!-- <a class="header__link" href="tel:+74012982110" data-header-link data-menu-phone>+7 (4012) 98 21 10</a> -->
+    <button class="header__burger burger btn btn-reset" data-open-menu aria-label="Открыть меню">
+      <span></span>
+    </button>
+  </div>
+  <div class="header__hero hero">
+    <div class="hero__content">
+      <h1 class="hero__title title">
+        <span class="hero__small-title hero__small-title--line">
+          Стань
+        </span>
+        владельцем
+        <br>
+        <span class="hero__big-title">
+          барбершопа
+        </span>
+      </h1>
+      <p class="hero__description hero__description--gold">
+        Крупнейшей&nbsp;в&nbsp;мире&nbsp;сети
+      </p>
+      <p class="hero__description hero__description--line hero__description--pb10">
+        Oldboy&nbsp;barbershop
+      </p>
+      <p class="hero__description hero__description--gold hero__description--pt10">
+        Зарабатывай
+      </p>
+      <p class="hero__description">
+        250&nbsp;000&nbsp;рублей&nbsp;+
+      </p>
+      <p class="hero__description hero__description--gold">
+        в&nbsp;месяц
+      </p>
+    </div>
+    <div class="hero__stock">
+      <img src="../img/header/stock.png" alt="100% поддержка франчайзи закрываем все вопросы под ключ">
+    </div>
+    <div class="hero__form form">
+      <h2 class="form__title">заполни форму</h2>
+      <p class="form__desc">и мы вышлем фин. модель на твою почту</p>
+      <form class="form__form" id="form" novalidate="novalidate">
+        <label class="form__label">
+          <input class="form__input" id="name" type="text" placeholder="Имя">
+        </label>
+        <label class="form__label">
+          <input class="form__input" id="tel" type="tel" placeholder="Телефон">
+        </label>
+        <label class="form__label">
+          <input class="form__input" id="email" type="email" placeholder="e-mail">
+        </label>
+        <label class="form__label form__label--checkbox">
+          <input class="form__input-checkbox" type="checkbox" name="" id="checkbox-custom">
+          <span class="form__input-checkbox-custom">
+            <a class="form__policy-link" href="#">
+              <span class="form__policy-text">Я соглашаюсь с </span>
+              <span>ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ</span>
+            </a>
+          </span>
+        </label>
+        <button class="btn-reset form__button btn-primary">
+          отправить
+        </button>
+      </form>
+    </div>
+  </div>
 </header>

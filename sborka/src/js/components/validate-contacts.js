@@ -1,6 +1,19 @@
 import JustValidate from 'just-validate'
+import { disableScroll } from '../components/helper-functions/disable-scroll.js'
+import { enableScroll } from '../components/helper-functions/enable-scroll.js'
 
-const validation = new JustValidate('#form-contacts', {
+const popup = document.querySelector('.popup-overlay')
+
+popup.addEventListener('click', () => popup.classList.remove('_active'))
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    popup.classList.remove('_active')
+    enableScroll()
+  }
+})
+
+const validation = new JustValidate('#form', {
   errorFieldCssClass: 'is-invalid',
   errorLabelStyle: {
     color: '#FF3030',
@@ -8,27 +21,6 @@ const validation = new JustValidate('#form-contacts', {
 })
 
 validation
-  .addField('#name', [
-    {
-      rule: 'minLength',
-      value: 3,
-      errorMessage: 'Поле должно содержать не менее 3 символов',
-    },
-    {
-      rule: 'maxLength',
-      value: 30,
-      errorMessage: 'Поле должно содержать не более 30 символов',
-    },
-    {
-      rule: 'required',
-      errorMessage: 'Недопустимый формат',
-    },
-    {
-      rule: 'customRegexp',
-      value: /^[а-яё -]+$/i,
-      errorMessage: 'Введите кирилицей',
-    }
-  ])
   .addField('#tel', [
     {
       rule: 'required',
@@ -40,19 +32,24 @@ validation
       errorMessage: 'Поле должно содержать не менее 11 символов',
     },
   ])
-  .addField('#textarea', [
+  .addField('#email', [
     {
-      rule: 'minLength',
-      value: 3,
-      errorMessage: 'Поле должно содержать не менее 3 символов',
+      rule: 'required',
+      errorMessage: 'Недопустимый формат',
     },
     {
-      rule: 'maxLength',
-      value: 300,
-      errorMessage: 'Поле должно содержать не более 300 символов',
+      rule: 'email',
+      errorMessage: 'Недопустимый формат',
     },
+  ])
+  .addField('#checkbox-custom', [
     {
       rule: 'required',
       errorMessage: 'Недопустимый формат',
     },
   ])
+  .onSuccess((event) => {
+    console.log('Validation passes and form submitted', event)
+    popup.classList.add('_active')
+    disableScroll()
+  })

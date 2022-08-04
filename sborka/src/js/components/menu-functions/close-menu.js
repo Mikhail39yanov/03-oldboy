@@ -8,5 +8,5 @@ export function closeMenu() {
   enableScroll()
   buttonMenu.classList.remove('_active')
   menu.classList.remove('_active')
-  phone.classList.remove('_active')
+  // phone.classList.remove('_active')
 }

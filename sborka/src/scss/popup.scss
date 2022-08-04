@@ -1,0 +1,54 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 50px;
+  opacity: 0;
+  visibility: hidden;
+  background-image: url('../img/popup/popup.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.popup-overlay._active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // padding: 5px 30px;
+  border: 10px solid rgba(214, 163, 84, 0.5);
+  background-color: transparent;
+  border-image: url(../img/form-ramka.svg) 15/25px;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+}
+
+.popup-title {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  @include setFontStyleRex();
+  font-size: 43px;
+  color: $colorWhite;
+}
